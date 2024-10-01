@@ -37,12 +37,14 @@ class _SplashScreenState extends State<SplashScreen> {
                 Text(
                   'Developer Student Club',
                   style: TextStyle(
+                    color: const Color.fromARGB(255, 255, 253, 253),
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 SizedBox(height: 80,width: 80,),
                   Text('SRM IST Ramapuram',style: TextStyle(
+                    color: const Color.fromARGB(255, 255, 253, 253),
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),),
