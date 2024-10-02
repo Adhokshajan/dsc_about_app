@@ -15,7 +15,10 @@ class TeamsScreen extends StatefulWidget {
 class _TeamsScreen extends State<TeamsScreen> {
 
   void _openAddMembers(){
-    showModalBottomSheet(context: context, builder: (ctx)=>AddMembers(teammembers: _addTeamMem,),);
+    showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+       builder: (ctx)=>AddMembers(teammembers: _addTeamMem,),);
 
   }
 
@@ -27,6 +30,21 @@ class _TeamsScreen extends State<TeamsScreen> {
 
   }
 
+  void _removeTeamMem(MembersStr members_list){
+    final memIndex=_teammembers.indexOf(members_list);
+    setState(() {
+      _teammembers.remove(members_list);
+    });
+    ScaffoldMessenger.of(context).clearSnackBars();
+
+    ScaffoldMessenger.of(context).showSnackBar
+    (SnackBar(duration: Duration(seconds: 3),action: SnackBarAction(label: "Undo", onPressed: (){
+      setState(() {
+        _teammembers.insert(memIndex, members_list);
+      });
+    }),content:
+     Text("Member deleted")),);
+  }
 
 
 
@@ -49,11 +67,19 @@ class _TeamsScreen extends State<TeamsScreen> {
 
 
 
-  final List<MembersStr> _teammembers=[
-    MembersStr(Name: "Adhok", Designation: "app dev",department:Dept.Technical)
-  ];
+
+  final List<MembersStr> _teammembers=[]; 
   @override
   Widget build(BuildContext context) {
+    Widget mainContent=Center(child: Text("No Team Members, Add Members"),);
+    if(_teammembers.isNotEmpty){
+      mainContent=MembersList(teamlist: _teammembers,removeTeamMem: _removeTeamMem,);
+    }
+
+
+
+
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
@@ -70,7 +96,7 @@ class _TeamsScreen extends State<TeamsScreen> {
 
           body: Column(children: [
             SizedBox(height: 50,),
-             Expanded(child: MembersList(teamlist: _teammembers))],),) 
+             Expanded(child:mainContent )],),) 
       );
   }
 }

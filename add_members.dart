@@ -67,7 +67,7 @@ class _AddMembers extends State<AddMembers> {
   }
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(16),
+    return Padding(padding: EdgeInsets.fromLTRB(16,48,16,16),
     
     child: Column(
       children: [
