@@ -13,9 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreen extends State<HomeScreen> {
 
-  final List<MembersStr> _teammembers=[
-    MembersStr(Name: "Adhok", Designation: "app dev")
-  ];
+  
   
 
 
@@ -26,7 +24,7 @@ class _HomeScreen extends State<HomeScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-        home: Scaffold(body: Column(children: [ Expanded(child: MembersList(teamlist: _teammembers))],),) 
+        home: Scaffold(body: Text("DSC")) 
       );
   }
 }
