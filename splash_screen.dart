@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, unused_import
 
 import 'dart:async';
+import 'package:dsc_about_app/assets/teams_screen.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart'; 
 
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) =>TeamsScreen()),
       );
     });
   }

@@ -8,12 +8,16 @@ class MembersTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 16,horizontal:20 ),
       child: Column(mainAxisAlignment: MainAxisAlignment.center,mainAxisSize: MainAxisSize.min,
         children: [
           Text(teamlist.Name),
-          Text(teamlist.Designation),
-          Text((teamlist.department).toString()),
+
+          Row(
+            children: [
+              Text(teamlist.Designation),
+            ],
+          ),
         ],
       ),
     ),);
