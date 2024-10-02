@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field
 
+import 'package:dsc_about_app/members_str.dart';
 import 'package:flutter/material.dart';
 
 class AddMembers extends StatefulWidget {
@@ -12,6 +13,7 @@ class AddMembers extends StatefulWidget {
 class _AddMembers extends State<AddMembers> {
   final _enteredname = TextEditingController();
   final _designation = TextEditingController();
+  Dept _entereddept=Dept.Content;
 
 
   
@@ -52,6 +54,17 @@ class _AddMembers extends State<AddMembers> {
             label: Text("Designation")
           ),
         ),
+        DropdownButton(value: _entereddept,items: Dept.values.map((department) =>
+         DropdownMenuItem(value: department,
+         child: Text(department.name.toString()))).toList(),
+          onChanged: (value){
+            if(value == null){
+              return;
+            }
+            setState(() {
+              _entereddept=value;
+            });
+          }),
         Row(
           children: [
             ElevatedButton(onPressed: (){}, child: Text("Save")),

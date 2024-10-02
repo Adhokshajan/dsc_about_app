@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:dsc_about_app/members_str.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +20,10 @@ class MembersTile extends StatelessWidget {
               Text(teamlist.Designation),
             ],
           ),
+          Row(children: [
+            Text(teamlist.department.name.toString())
+            
+          ],)
         ],
       ),
     ),);
