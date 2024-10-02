@@ -4,7 +4,10 @@ import 'package:dsc_about_app/members_str.dart';
 import 'package:flutter/material.dart';
 
 class AddMembers extends StatefulWidget {
-  const AddMembers({super.key});
+  const AddMembers({super.key,
+  required this.teammembers});
+
+  final void Function(MembersStr teammembers) teammembers;
 
   @override
   State<AddMembers> createState() => _AddMembers();
@@ -19,6 +22,34 @@ class _AddMembers extends State<AddMembers> {
   
   void _closeOverlay(){
     Navigator.pop(context);
+  }
+
+
+  void _submitMembers(){
+
+    if(_enteredname.text.trim().isEmpty || _designation.text.trim().isEmpty){
+      showDialog(context: context, builder:(ctx)=>AlertDialog(
+        title: Text("Invalid Input"),
+        content: Text("Please Enter a Name,Designation"),
+        actions: [
+          TextButton(onPressed: (){
+            Navigator.pop(ctx);
+          }, child: Text("ok"))
+        ],
+      ),);
+      return;
+
+
+    }
+
+    widget.teammembers(MembersStr(
+      Name: _enteredname.text,
+       Designation: _designation.text,
+        department: _entereddept),);
+        Navigator.pop(context);
+
+
+
   }
 
 
@@ -54,20 +85,27 @@ class _AddMembers extends State<AddMembers> {
             label: Text("Designation")
           ),
         ),
-        DropdownButton(value: _entereddept,items: Dept.values.map((department) =>
-         DropdownMenuItem(value: department,
-         child: Text(department.name.toString()))).toList(),
-          onChanged: (value){
-            if(value == null){
-              return;
-            }
-            setState(() {
-              _entereddept=value;
-            });
-          }),
+        SizedBox(height: 20,), 
+        Row(children: [Text("Department")],),
         Row(
           children: [
-            ElevatedButton(onPressed: (){}, child: Text("Save")),
+            DropdownButton(value: _entereddept,items: Dept.values.map((department) =>
+             DropdownMenuItem(value: department,
+             child: Text(department.name.toString()))).toList(),
+              onChanged: (value){
+                if(value == null){
+                  return;
+                }
+                setState(() {
+                  _entereddept=value;
+                });
+              }),
+          ],
+        ),
+        SizedBox(height: 20,),
+        Row(
+          children: [
+            ElevatedButton(onPressed: _submitMembers, child: Text("Save")),
             ElevatedButton(onPressed: _closeOverlay, child: Text("Cancel"))
           ],
         )

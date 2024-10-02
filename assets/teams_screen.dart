@@ -15,7 +15,15 @@ class TeamsScreen extends StatefulWidget {
 class _TeamsScreen extends State<TeamsScreen> {
 
   void _openAddMembers(){
-    showModalBottomSheet(context: context, builder: (ctx)=>AddMembers(),);
+    showModalBottomSheet(context: context, builder: (ctx)=>AddMembers(teammembers: _addTeamMem,),);
+
+  }
+
+  void _addTeamMem(MembersStr members_list){
+    setState(() {
+      _teammembers.add(members_list);
+      
+    });
 
   }
 
