@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dsc_about_app/aboutus_page.dart';
 import 'package:dsc_about_app/add_members.dart';
+import 'package:dsc_about_app/landing_page.dart';
 import 'package:dsc_about_app/members_list.dart';
 import 'package:dsc_about_app/members_str.dart';
 import 'package:flutter/material.dart';
@@ -91,6 +93,54 @@ class _TeamsScreen extends State<TeamsScreen> {
 
 
           ),
+          drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text(
+                'DSC SRM IST',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LandingPage()),
+                );
+              },
+            ),
+            SizedBox(height: 10,),
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('About Us',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutUsPage()),
+                );
+              },
+            ),
+            SizedBox(height: 10,),
+            ListTile(
+              leading: Icon(Icons.group),
+              title: Text('Team Members',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => TeamsScreen()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
 
 
 

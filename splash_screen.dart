@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'package:dsc_about_app/assets/teams_screen.dart';
+import 'package:dsc_about_app/landing_page.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart'; 
 
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) =>TeamsScreen()),
+        MaterialPageRoute(builder: (context) =>LandingPage()),
       );
     });
   }
