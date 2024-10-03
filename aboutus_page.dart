@@ -67,8 +67,16 @@ class AboutUsPage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Developer Students Club (DSC) is a community of students who are passionate about solving real-world problems using technology. Our mission is to empower students to develop technical skills, work on collaborative projects, and build innovative solutions to community problems.',
-                style: TextStyle(fontSize: 18,color: const Color.fromARGB(255, 8, 210, 236),),
+              '''The Developer Students Club is a platform for integrative students to interact with each other in various domains to identify social problems and provide engineering solutions. This initiative helps to develop team spirit, leadership, and practical skills.
+
+We also have the vision to make this place dedicated enforcement for allowing our members and other students to explore ideas, experiencing the process of creation of technology from ideation to prototyping.
+
+We believe in giving hands-on experience to participants and members through seminars, hands-on workshops, boot camps, and tech talks and also providing platforms for a competition like hackathons, solution challenge, study jam, etc.
+
+The activities of the club are determined by the particular interest of the students, as well as the availability of necessary resources and the particular technology needs of the community. We believe in creating a wide-spread impact on the social level by building solutions.
+
+ "Where ideas turn into reality''',
+                style: TextStyle(fontSize: 18,color: const Color.fromARGB(255, 8, 210, 236), ),textAlign: TextAlign.center,
               ),
               SizedBox(height: 20),
               Text(
