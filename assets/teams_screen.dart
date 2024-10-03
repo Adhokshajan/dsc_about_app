@@ -98,15 +98,9 @@ class _TeamsScreen extends State<TeamsScreen> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text(
-                'DSC SRM IST',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-            ),
+           SizedBox(height: 30,),
+            Text("DSC SRM IST",style: TextStyle(fontSize: 30,color: const Color.fromARGB(255, 8, 210, 236)),),
+            SizedBox(height: 20,),
             ListTile(
               leading: Icon(Icons.home),
               title: Text('Home',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),

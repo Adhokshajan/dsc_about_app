@@ -8,22 +8,20 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Developer Students Club',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
           centerTitle: true,
         ),
-        drawer: Drawer(
+        drawer: Drawer(  
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              padding: EdgeInsets.all(5),
-              child: Text(
-                'DSC SRM IST',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),
-              ),
-            ),
+           SizedBox(height: 30,),
+            Text("DSC SRM IST",style: TextStyle(fontSize: 30,color: const Color.fromARGB(255, 8, 210, 236)),),
+            SizedBox(height: 20,),
             ListTile(
               leading: Icon(Icons.home),
               title: Text('Home',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
