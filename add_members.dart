@@ -79,16 +79,23 @@ class _AddMembers extends State<AddMembers> {
             controller: _enteredname,
             decoration: InputDecoration(
               label: Text("Member Name",style: TextStyle(color:  const Color.fromARGB(255, 8, 210, 236)),),
-              focusColor:  const Color.fromARGB(255, 8, 210, 236)
+              focusColor:  const Color.fromARGB(255, 8, 210, 236),
+              border: OutlineInputBorder()
       
             ),
+            style: TextStyle(color: Colors.white),
           ),
           SizedBox(height: 20,),                       
           TextField(
             controller: _designation,
             decoration: InputDecoration(
-              label: Text("Designation",style: TextStyle(color:  const Color.fromARGB(255, 8, 210, 236)),)
+              focusColor: Colors.white,
+              border: OutlineInputBorder(),
+              fillColor: const Color.fromARGB(255, 8, 210, 236),
+              label: Text("Designation",style: TextStyle(color:  const Color.fromARGB(255, 8, 210, 236)),),
+              hintStyle: TextStyle(color: Colors.white)
             ),
+            style: TextStyle(color: Colors.white),
           ),
           SizedBox(height: 20,), 
           Row(children: [Text("Department",style: TextStyle(color:  const Color.fromARGB(255, 8, 210, 236)),)],),
