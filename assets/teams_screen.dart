@@ -73,7 +73,8 @@ class _TeamsScreen extends State<TeamsScreen> {
   final List<MembersStr> _teammembers=[]; 
   @override
   Widget build(BuildContext context) {
-    Widget mainContent=Center(child: Text("No Team Members, Add Members"),);
+    Widget mainContent=Center(child: Text('''No Team Members, Add Members
+    Click on + to add Members''',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),);
     if(_teammembers.isNotEmpty){
       mainContent=MembersList(teamlist: _teammembers,removeTeamMem: _removeTeamMem,);
     }
@@ -146,6 +147,7 @@ class _TeamsScreen extends State<TeamsScreen> {
 
           body: Column(children: [
             SizedBox(height: 50,),
+            Text("Swipe Left to delete The member",style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
              Expanded(child:mainContent )],),) 
       );
   }

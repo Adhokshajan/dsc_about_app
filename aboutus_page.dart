@@ -11,25 +11,18 @@ class AboutUsPage extends StatelessWidget {
       theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('About Us'),
+          title: Text('About Us',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
         ),
         drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-             
-              child: Text(
-                'DSC Navigation',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
+            SizedBox(height: 30,),
+            Text("DSC SRM IST",style: TextStyle(fontSize: 30,color: const Color.fromARGB(255, 8, 210, 236)),),
+            SizedBox(height: 20,),
             ListTile(
               leading: Icon(Icons.home),
-              title: Text('Home'),
+              title: Text('Home',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
               onTap: () {
                 Navigator.pushReplacement(
                   context,
@@ -37,10 +30,10 @@ class AboutUsPage extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 20,),
             ListTile(
               leading: Icon(Icons.info),
-              title: Text('About Us'),
+              title: Text('About Us',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
               onTap: () {
                 Navigator.pushReplacement(
                   context,
@@ -51,7 +44,7 @@ class AboutUsPage extends StatelessWidget {
             SizedBox(height: 10,),
             ListTile(
               leading: Icon(Icons.group),
-              title: Text('Team Members'),
+              title: Text('Team Members',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
               onTap: () {
                 Navigator.pushReplacement(
                   context,
@@ -69,22 +62,22 @@ class AboutUsPage extends StatelessWidget {
             children: <Widget>[
               Text(
                 'About DSC',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 8, 210, 236),),
               ),
               SizedBox(height: 10),
               Text(
                 'Developer Students Club (DSC) is a community of students who are passionate about solving real-world problems using technology. Our mission is to empower students to develop technical skills, work on collaborative projects, and build innovative solutions to community problems.',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18,color: const Color.fromARGB(255, 8, 210, 236),),
               ),
               SizedBox(height: 20),
               Text(
                 'Vision & Mission',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 8, 210, 236),),
               ),
               SizedBox(height: 10),
               Text(
                 'Our vision is to create a global network of students and developers who collaborate, learn, and build solutions that can make a difference. We organize workshops, hackathons, and coding challenges to foster innovation and learning among students.',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18,color: const Color.fromARGB(255, 8, 210, 236),),
               ),
             ],
           ),

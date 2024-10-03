@@ -11,7 +11,7 @@ class LandingPage extends StatelessWidget {
       theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Developer Students Club'),
+          title: Text('Developer Students Club',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),),
           centerTitle: true,
         ),
         drawer: Drawer(
@@ -19,13 +19,9 @@ class LandingPage extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-            
+              padding: EdgeInsets.all(5),
               child: Text(
-                'DSC SRM IST',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
+                'DSC SRM IST',style: TextStyle(color: const Color.fromARGB(255, 8, 210, 236)),
               ),
             ),
             ListTile(
@@ -66,9 +62,11 @@ class LandingPage extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset("lib/assets/img1.jpg",width: 150,),
+            SizedBox(height: 16,),
             Text(
               'Welcome to DSC!',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24,color: const Color.fromARGB(255, 8, 210, 236)),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 20),
@@ -76,7 +74,7 @@ class LandingPage extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 'Join us and enhance your skills through coding, workshops, and more. Collaborate with students and developers worldwide!',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18,color: const Color.fromARGB(255, 8, 210, 236)),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -85,11 +83,12 @@ class LandingPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>AboutUsPage(),),);
               },
-              child: Text('Learn More'),
+              child: Text('Learn More',style: TextStyle(color: Colors.black),),
       
               
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                backgroundColor: const Color.fromARGB(255, 8, 210, 236), 
               ),
             ),
           ],

@@ -43,8 +43,8 @@ class _AddMembers extends State<AddMembers> {
     }
 
     widget.teammembers(MembersStr(
-      Name: _enteredname.text,
-       Designation: _designation.text,
+      Name: _enteredname.text.toUpperCase(),
+       Designation: _designation.text.toUpperCase(),
         department: _entereddept),);
         Navigator.pop(context);
 
@@ -67,49 +67,56 @@ class _AddMembers extends State<AddMembers> {
   }
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.fromLTRB(16,48,16,16),
-    
-    child: Column(
-      children: [
-        TextField(
-          controller: _enteredname,
-          decoration: InputDecoration(
-            label: Text("Member Name")
-
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Padding(padding: EdgeInsets.fromLTRB(16,48,16,16),
+      
+      child: Column(
+        
+        
+        children: [
+          TextField(
+            controller: _enteredname,
+            decoration: InputDecoration(
+              label: Text("Member Name",style: TextStyle(color:  const Color.fromARGB(255, 8, 210, 236)),),
+              focusColor:  const Color.fromARGB(255, 8, 210, 236)
+      
+            ),
           ),
-        ),
-        SizedBox(height: 20,),                       
-        TextField(
-          controller: _designation,
-          decoration: InputDecoration(
-            label: Text("Designation")
+          SizedBox(height: 20,),                       
+          TextField(
+            controller: _designation,
+            decoration: InputDecoration(
+              label: Text("Designation",style: TextStyle(color:  const Color.fromARGB(255, 8, 210, 236)),)
+            ),
           ),
-        ),
-        SizedBox(height: 20,), 
-        Row(children: [Text("Department")],),
-        Row(
-          children: [
-            DropdownButton(value: _entereddept,items: Dept.values.map((department) =>
-             DropdownMenuItem(value: department,
-             child: Text(department.name.toString()))).toList(),
-              onChanged: (value){
-                if(value == null){
-                  return;
-                }
-                setState(() {
-                  _entereddept=value;
-                });
-              }),
-          ],
-        ),
-        SizedBox(height: 20,),
-        Row(
-          children: [
-            ElevatedButton(onPressed: _submitMembers, child: Text("Save")),
-            ElevatedButton(onPressed: _closeOverlay, child: Text("Cancel"))
-          ],
-        )
-      ],
-    ),);
+          SizedBox(height: 20,), 
+          Row(children: [Text("Department",style: TextStyle(color:  const Color.fromARGB(255, 8, 210, 236)),)],),
+          Row(
+            children: [
+              DropdownButton(value: _entereddept,items: Dept.values.map((department) =>
+               DropdownMenuItem(value: department,
+               child: Text(department.name.toString(),style: TextStyle(color:  const Color.fromARGB(255, 8, 210, 236)),))).toList(),
+                onChanged: (value){
+                  if(value == null){
+                    return;
+                  }
+                  setState(() {
+                    _entereddept=value;
+                  });
+                }),
+            ],
+          ),
+          SizedBox(height: 20,),
+          Row(
+            children: [
+              ElevatedButton(onPressed: _submitMembers,style: ElevatedButton.styleFrom(backgroundColor:  const Color.fromARGB(255, 8, 210, 236)), child: Text("Save",style: TextStyle(color:  Colors.black),)),
+              SizedBox(width: 10,),
+              ElevatedButton(onPressed: _closeOverlay,style: ElevatedButton.styleFrom(backgroundColor:  const Color.fromARGB(255, 8, 210, 236)), child: Text("Cancel",style: TextStyle(color:  Colors.black),))
+            ],
+          )
+        ],
+      ),),
+    );
   }
 }
