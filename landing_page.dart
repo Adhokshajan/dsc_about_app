@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, sort_child_properties_last
 
 import 'package:dsc_about_app/aboutus_page.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +35,8 @@ class LandingPage extends StatelessWidget {
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>AboutUsPage(),),);
             },
             child: Text('Learn More'),
+
+            
             style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             ),
